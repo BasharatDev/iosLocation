@@ -1,12 +1,7 @@
-//
-//  MyLocationDataManager.h
-//  location
-//
-//  Created by Basharat mac on 13/05/2024.
-//
+// MyLocationDataManager.h
 
-#ifndef MyLocationDataManager_h
-#define MyLocationDataManager_h
+#import <React/RCTEventEmitter.h>
 
+@interface MyLocationDataManager : RCTEventEmitter <RCTBridgeModule>
 
-#endif /* MyLocationDataManager_h */
+@end

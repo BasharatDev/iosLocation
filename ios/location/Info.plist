@@ -2,8 +2,55 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<key>Permitted background task scheduler identifiers
+    &lt;key&gt;NSPrivacyAccessedAPITypes&lt;/key&gt;
+    &lt;array&gt;
+        &lt;!-- [1] background_fetch: UserDefaults --&gt;
+        &lt;dict&gt;
+            &lt;key&gt;NSPrivacyAccessedAPIType&lt;/key&gt;
+            &lt;string&gt;NSPrivacyAccessedAPICategoryUserDefaults&lt;/string&gt;
+
+            &lt;key&gt;NSPrivacyAccessedAPITypeReasons&lt;/key&gt;
+            &lt;array&gt;
+                &lt;string&gt;CA92.1&lt;/string&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+
+        &lt;!-- [2] background_geolocation: UserDefaults --&gt;
+        &lt;dict&gt;
+            &lt;key&gt;NSPrivacyAccessedAPIType&lt;/key&gt;
+            &lt;string&gt;NSPrivacyAccessedAPICategoryUserDefaults&lt;/string&gt;
+
+            &lt;key&gt;NSPrivacyAccessedAPITypeReasons&lt;/key&gt;
+            &lt;array&gt;
+                &lt;string&gt;CA92.1&lt;/string&gt;
+                &lt;string&gt;1C8F.1&lt;/string&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+        &lt;!-- [3] background_geolocation (CocoaLumberjack): FileTimestamp --&gt;
+        &lt;dict&gt;
+            &lt;key&gt;NSPrivacyAccessedAPIType&lt;/key&gt;
+            &lt;string&gt;NSPrivacyAccessedAPICategoryFileTimestamp&lt;/string&gt;
+            &lt;key&gt;NSPrivacyAccessedAPITypeReasons&lt;/key&gt;
+            &lt;array&gt;
+                &lt;string&gt;C617.1&lt;/string&gt;
+                &lt;string&gt;0A2A.1&lt;/string&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+        &lt;!-- [4] background_geolocation (CocoaLumberjack): DiskSpace --&gt;
+        &lt;dict&gt;
+            &lt;key&gt;NSPrivacyAccessedAPIType&lt;/key&gt;
+            &lt;string&gt;NSPrivacyAccessedAPICategoryDiskSpace&lt;/string&gt;
+            &lt;key&gt;NSPrivacyAccessedAPITypeReasons&lt;/key&gt;
+            &lt;array&gt;
+                &lt;string&gt;E174.1&lt;/string&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+    &lt;/array&gt;
+</key>
+	<array>
+		<string>com.transistorsoft.fetch</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>location</string>
 	<key>CFBundleExecutable</key>
@@ -26,14 +73,24 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>Motion Usage Description</key>
+	<string>Motion permission helps detect when device in in-motion</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your app requires background location access to provide accurate location data.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Your app requires location access to provide accurate location data.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
